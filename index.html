@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>For You ❤️</title>
+</head>
+ <style>
+     body {
+        margin: 0;
+        padding: 0;
+
+        min-height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: Arial, sans-serif;
+
+        background: linear-gradient(
+            135deg,
+            #ffe4ec,
+            #ffd1dc
+        );
+
+        color: #333;
+
+        overflow: hidden;
+     }
+     .photo-love {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 30px auto;
+    transform: translateY(-200px);
+}
+
+
+    .photo {
+        width: 40vw;
+        max-width: 180px;
+        aspect-ratio: 3 / 4;
+
+        object-fit: cover;
+
+        border-radius: 15px;
+
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+        transition: transform 0.3s ease;
+    }
+    button {
+    position: fixed;
+    border-radius: 15px;
+    transform: translateX(-50%);
+    padding: 12px 25px;
+    bottom: 30px;
+    left: 50%;
+
+
+
+    }
+
+    .text-box {
+
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    background: #d63384;
+    width: 50vh;
+    height: 45vh;
+    position: fixed;
+    left: 50%;
+    bottom: 40%;
+    transform: translate(-50%, 50%);
+    transition: opacity 5s ease, visibility 1s ease;
+    }
+
+    .text-box.show {
+    opacity: 1;
+    visibility: visible;
+    }
+
+
+
+
+    .photo-left {
+        transform: rotate(-8deg) translateX(10px);
+    }
+
+
+    .photo-right {
+        transform: rotate(8deg) translateX(-10px);
+    }
+
+
+    .heart {
+        position: absolute;
+
+        left: 50%;
+        top: 50%;
+
+        transform: translate(-50%, -50%);
+
+        z-index: 10;
+
+        font-size: clamp(35px, 10vw, 55px);
+
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+
+        animation: heartBeat 1s ease-in-out infinite;
+    }
+
+
+    @keyframes heartBeat {
+
+        0%, 100% {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        50% {
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+    }
+
+     h3 {
+     color: white;
+     }
+
+
+ </style>
+
+<body>
+    <div class="text-box" id="message">
+        <h1 style="color: white;
+                   font-family: 'Dancing Script', cursive;">รักนะ</h1>
+        <h3>
+        เรารักหอมมากนะ<br>
+        อยากให้อยู่ด้วยกันแบบนี้ไปนาน ๆ เลย<br><br>
+
+        เราอาจจะไม่ค่อยเก่งเรื่องพูด<br>
+        บางทีเราอาจไม่รู้ว่าจะพูดอะไรดี<br>
+        แต่เราอยากให้หอมรู้ไว้นะว่า<br>
+        เราดีใจมากที่มีหอมเข้ามาในชีวิต<br><br>
+        ขอบคุณที่อยู่ข้าง ๆ กันนะ<br>
+        รักหอมนะ ❤️
+        </h3>
+
+    </div>
+    <button onclick="song_run()">💌 เปิดเพลง</button>
+
+
+
+    <audio id="son">
+    <source src="son.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="photo-love">
+
+        <img src="photo1.jpg" class="photo photo-left">
+
+        <div class="heart">
+            ❤️
+        </div>
+
+        <img src="photo2.jpg" class="photo photo-right">
+
+    </div>
+
+
+
+
+
+    <script>
+        function song_run() {
+         document.getElementById("son").play();
+
+         document.getElementById("message").classList.add("show");
+        }
+
+
+    </script>
+</body>
+</html>
+
